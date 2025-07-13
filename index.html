@@ -1,43 +1,84 @@
 <!DOCTYPE html>
 <html lang="ko">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>JYH_PORTFOLIO</title>
-      <link rel="stylesheet" href="css/index.css" />
-      <script type="module" src="javascript/index.ts"></script>
-   </head>
-   <body>
-      <header>
-         <nav>
-            <div class="J_name"></div>
-            <ul>
-               <li><a href="#ABOUT">About</a></li>
-               <li><a href="#ARCHIVING">Archiving</a></li>
-               <li><a href="#SKILL">Skill</a></li>
-               <li><a href="#PROJECT">Project</a></li>
-            </ul>
-         </nav>
-      </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JYH_PORTFOLIO</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+      rel="stylesheet"
+    />
+    <script defer src="javascript/index.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="J_name">JYP</div>
+        <ul>
+          <li><a href="#ABOUT">About</a></li>
+          <li><a href="#ARCHIVING">Archiving</a></li>
+          <li><a href="#SKILL">Skill</a></li>
+          <li><a href="#PROJECT">Project</a></li>
+          <li><a href="#CONTACT">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-      <main>
-         <section id="ABOUT">
-            <h2>About</h2>
-         </section>
+    <main>
+      <section id="ABOUT">
+        <h2>About</h2>
+        <p>안녕하세요! 사용자 경험을 생각하며 개발하는 프론트엔드 개발자 JYP입니다.</p>
+        <p>꾸준함, 호기심, 협업을 기반으로 성장하고 있습니다.</p>
+      </section>
 
-         <section id="ARCHIVING">
-            <h2>Archiving</h2>
-         </section>
+      <section id="ARCHIVING">
+        <h2>Archiving</h2>
+        <ul class="archive-list">
+          <li><a href="https://github.com/yourid" target="_blank">GitHub</a> - 프로젝트 및 소스 코드</li>
+          <li><a href="https://velog.io/@yourid" target="_blank">Velog</a> - 기술 블로그</li>
+          <li><a href="https://your-notion-link" target="_blank">Notion</a> - 정리된 자료 공간</li>
+        </ul>
+      </section>
 
-         <section id="SKILL">
-            <h2>Skill</h2>
-         </section>
+      <section id="SKILL">
+        <h2>Skill</h2>
+        <div class="skill-container">
+          <div>
+            <h3>Frontend</h3>
+            <p>HTML, CSS, JavaScript, React, TypeScript</p>
+          </div>
+          <div>
+            <h3>Backend</h3>
+            <p>Node.js, Express, NestJS</p>
+          </div>
+          <div>
+            <h3>Tools</h3>
+            <p>Git, Figma, Postman, Vercel</p>
+          </div>
+        </div>
+      </section>
 
-         <section id="PROJECT">
-            <h2>Project</h2>
-         </section>
-      </main>
+      <section id="PROJECT">
+        <h2>Project</h2>
+        <div class="project-item">
+          <h3>러닝 기록 앱</h3>
+          <p>러닝 경로를 지도에 기록하고 썸네일로 저장하는 기능을 구현한 웹 앱</p>
+          <p><strong>Tech:</strong> React, Kakao Map API, NestJS, AWS</p>
+          <a href="https://github.com/yourid/project1" target="_blank">깃허브 바로가기</a>
+        </div>
+      </section>
 
-      <footer>JYP</footer>
-   </body>
+      <section id="CONTACT">
+        <h2>Contact</h2>
+        <ul>
+          <li>Email: your@email.com</li>
+          <li>GitHub: https://github.com/yourid</li>
+          <li>LinkedIn: https://linkedin.com/in/yourid</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>ⓒ 2025 JYP Portfolio</footer>
+  </body>
 </html>
