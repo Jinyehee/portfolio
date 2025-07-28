@@ -28,7 +28,7 @@ body {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #5e5370;
+  background: #374151;
   width: 40px;
   height: 40px;
   transition: all 0.4s;
@@ -50,87 +50,82 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  height: 80px;
-  background: #5e5370;
+  bottom: 0;
+  width: 300px;
+  transition: all ease-in-out 0.5s;
   z-index: 9997;
-  padding: 0 30px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 0 40px;
+  background: #374151;
+  overflow-y: auto;
+  font-weight: bold;
+  text-align: left;
 }
 
 #main {
-  margin-left: 0;
+  margin-left: 300px;
 }
 
-#header .logo a {
-  font-size: 30px;
-  font-weight: 700;
-  color: #fff;
-  text-decoration: none;
+@media (max-width: 1199px) {
+  #header {
+    left: -300px;
+  }
+
+  #main {
+    margin-left: 0;
+  }
 }
 
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Desktop Navigation */
+
 .nav-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  height: 80px;
+  padding: 60px 0 0 0;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.nav-menu > ul {
-  display: flex;
+.nav-menu * {
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .nav-menu > ul > li {
-  margin-left: 20px;
+  position: relative;
+  white-space: nowrap;
 }
 
-.nav-menu a {
-  color: #fff;
-  font-size: 20px;
-  padding: 10px 0;
+.nav-menu a,
+.nav-menu a:focus {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  padding: 12px 15px;
+  margin-bottom: 8px;
   transition: 0.3s;
+  font-size: 24px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo p {
+  font-size: 40px;
+  margin: 0;
+  text-align: left;
+  color: white;
+  padding: 0px 20px;
+  margin-bottom: 40px;
 }
 
 .nav-menu a:hover,
-.nav-menu .active {
-  color: #c2b8a3;
-}
-
-/* Mobile Navigation */
-.mobile-nav-toggle {
-  position: fixed;
-  right: 15px;
-  top: 15px;
-  z-index: 9998;
-  border: 0;
-  font-size: 24px;
-  transition: all 0.4s;
-  outline: none !important;
-  background-color: #537062;
-  color: #fff;
-  width: 40px;
-  height: 40px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 0;
-  border-radius: 50px;
-  cursor: pointer;
-}
-
-.mobile-nav-active {
-  overflow: hidden;
-}
-
-.mobile-nav-active #header {
-  left: 0;
+.nav-menu .active,
+.nav-menu .active:focus,
+.nav-menu li:hover > a {
+  color: #fbbf24;
 }
 
 /*--------------------------------------------------------------
@@ -139,7 +134,7 @@ body {
 #hero {
   width: 100%;
   height: 100vh;
-  background: #ebebf0;
+  background: #f5f8fd;
 }
 
 #hero:before {
@@ -157,6 +152,7 @@ body {
   position: relative;
   z-index: 2;
   min-width: 300px;
+  margin-left: 200px;
 }
 
 #hero p {
@@ -170,6 +166,82 @@ body {
   padding-bottom: 4px;
   letter-spacing: 1px;
   border-bottom: 3px solid #d9cec6;
+}
+
+/* Hero 버튼 스타일 */
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #3f3e47;
+  margin-bottom: 40px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 2rem;
+  min-height: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.btn {
+  padding: 12px 30px;
+  border-radius: 70px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: #374151;
+  color: white;
+  border: none;
+  box-shadow: 0 2px 8px rgba(55, 65, 81, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(55, 65, 81, 0.3);
+  color: white;
+  background: #4b5563;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #374151;
+  border: 1px solid #374151;
+}
+
+.btn-outline:hover {
+  background: #374151;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(55, 65, 81, 0.2);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /*--------------------------------------------------------------
@@ -205,7 +277,7 @@ section {
   display: block;
   width: 100%;
   height: 3px;
-  background: #a08ebb;
+  background: #374151;
   bottom: 15px;
   left: 0;
 }
@@ -221,23 +293,127 @@ section {
 .about {
   height: 100vh;
 }
-.row {
-  margin-bottom: 50px;
+/* About 전용 스타일 */
+.about .row_content {
+  width: 50%;
 }
-.about .content h3 {
-  font-weight: 700;
-  font-size: 26px;
-  color: #837b66;
+
+.about .row {
+  margin-bottom: 50px;
+  padding-left: 50px;
+}
+
+.about .row_back {
+  width: 50%;
+  padding: 0px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+
+.about .row_in {
+  width: 200px;
+  height: 270px;
+  background-color: black;
   margin-bottom: 20px;
 }
-.in_row {
+@media (min-width: 992px) {
+  .about .col_in {
+    width: 100%;
+  }
+}
+
+.about .content h3 {
+  font-weight: 600;
+  font-size: 24px;
+  color: #374151;
+  margin-bottom: 20px;
+}
+
+.about .content h4 {
+  font-weight: 600;
+  font-size: 24px;
+  color: #374151;
+  margin-bottom: 20px;
+}
+
+/* Education Timeline 스타일 */
+.education-timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.education-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #ddae4a;
+}
+
+.education-item {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 20px;
+}
+
+.education-item::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ddae4a;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 2px #ddae4a;
+}
+
+.education-date {
+  margin-bottom: 8px;
+}
+
+.education-date .year {
+  font-weight: 700;
+  font-size: 16px;
+  color: #374151;
+  margin-right: 8px;
+}
+
+.education-date .period {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.education-content strong {
+  font-weight: 600;
+  font-size: 16px;
+  color: #374151;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.education-content p {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+}
+.about .in_row {
   display: flex;
   width: 80%;
+  margin-bottom: 30px;
 }
-.in_row div {
+
+.about .in_row div {
   width: 100%;
 }
-.img-fluid {
+.about .img-fluid {
   object-fit: cover;
   height: 100%;
 }
@@ -248,12 +424,9 @@ section {
 }
 
 .about .content ul li {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
-}
-.about .content ul li:first-child {
-  margin-bottom: 20px;
 }
 
 .about .content ul strong {
@@ -270,45 +443,61 @@ section {
 .about .content .in_row li:last-child {
   margin-bottom: 0;
 }
-.archive-list {
+
+.about .archive-list {
   display: flex;
   padding-left: 0px;
+  margin-top: 100px;
   justify-content: end;
 }
-.archive-list li {
+
+.about .archive-list li {
   margin-right: 40px;
 }
-.archive-list li a {
+
+.about .archive-list li a {
   margin-right: 10px;
 }
-.archive-list img {
+
+.about .archive-list img {
   width: 40px;
   height: 40px;
   object-fit: cover;
 }
 /*--------------------------------------------------------------
-# Akills
+# skills
 --------------------------------------------------------------*/
 #skills {
   padding-bottom: 0;
 }
 
 .skills .progress {
-  height: 60px;
+  height: 110px;
   display: block;
   background: none;
   border-radius: 0;
-  margin-top: 50px;
+  margin-top: 30px;
+}
+
+.skills .progress div {
+  margin-bottom: 10px;
+}
+
+.skills .progress img {
+  height: 50px;
+  margin: 0px 10px;
 }
 
 .skills .progress .skill {
   padding: 0;
   margin: 0 0 6px 0;
   text-transform: uppercase;
-  display: block;
+  display: flex;
+  align-items: center;
   font-weight: 600;
   color: #050d18;
   font-size: 1.4em;
+  justify-content: space-between;
 }
 
 .skills .progress .skill .val {
@@ -325,7 +514,7 @@ section {
   width: 1px;
   height: 12px;
   transition: 0.9s;
-  background-color: #c2b8a3;
+  background-color: #ddae4a;
 }
 
 /*--------------------------------------------------------------
@@ -359,8 +548,8 @@ section {
 
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
-  color: #c2b8a3;
-  font-weight: 600;
+  color: #fbbf24;
+  font-weight: 700;
 }
 
 .portfolio #portfolio-flters li:last-child {
@@ -372,6 +561,17 @@ section {
   position: relative;
   overflow: hidden;
   z-index: 1;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio .portfolio-wrap:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .portfolio .portfolio-wrap::before {
@@ -403,17 +603,17 @@ section {
   color: #fff;
   font-size: 28px;
   text-align: center;
-  background: rgba(161, 154, 121, 0.75);
+  background: rgba(219, 185, 110, 0.55);
   transition: 0.3s;
   width: 50%;
 }
 
 .portfolio .portfolio-wrap .portfolio-links a:hover {
-  background: rgba(161, 154, 121, 0.95);
+  background: rgba(219, 185, 110, 0.75);
 }
 
 .portfolio .portfolio-wrap .portfolio-links a + a {
-  border-left: 1px solid rgba(161, 154, 121);
+  border-left: 1px solid rgba(219, 185, 110);
 }
 
 .portfolio .portfolio-wrap:hover::before {
@@ -651,7 +851,103 @@ section {
 # Contact
 --------------------------------------------------------------*/
 .contact {
-  padding-bottom: 130px;
+  padding-bottom: 100px;
+}
+
+.contact p {
+  margin-bottom: 40px;
+}
+
+.contact .info {
+  padding: 30px;
+  background: #fff;
+  width: 100%;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 15px;
+  border-left: 3px solid #374151;
+}
+
+.contact-form {
+  width: 100%;
+  padding: 40px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin: 0 auto;
+}
+
+.contact-form .form-group {
+  margin-bottom: 25px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.contact-form .form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+  outline: none;
+  border-color: #374151;
+  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.1);
+}
+
+.contact-form textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.send-btn {
+  background: #374151;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(55, 65, 81, 0.1);
+}
+
+.send-btn:hover {
+  background: #4b5563;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(55, 65, 81, 0.2);
+}
+
+.form-message {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.success-message {
+  color: #ffffff;
+  background: #ddae4a;
+  padding: 12px 20px;
+  border-radius: 6px;
+  border: 1px solid #ddae4a;
+  font-weight: 500;
+}
+
+.error-message {
+  color: #ef4444;
+  background: #fee2e2;
+  padding: 12px 20px;
+  border-radius: 6px;
+  border: 1px solid #fca5a5;
+  font-weight: 500;
 }
 
 .contact .info {
@@ -892,7 +1188,7 @@ section {
   bottom: 0;
   height: 3px;
   width: 100%;
-  background-color: #a08ebb; /* 원하는 강조 색상으로 변경 가능 */
+  background-color: #374151; /* 원하는 강조 색상으로 변경 가능 */
   border-radius: 2px;
 }
 

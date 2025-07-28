@@ -175,6 +175,8 @@
     if (portfolioContainer) {
       let portfolioIsotope = new Isotope(portfolioContainer, {
         itemSelector: ".portfolio-item",
+        layoutMode: "fitRows",
+        sortBy: "original-order",
       });
 
       let portfolioFilters = select("#portfolio-flters li", true);
@@ -191,6 +193,7 @@
 
           portfolioIsotope.arrange({
             filter: this.getAttribute("data-filter"),
+            sortBy: "original-order",
           });
           portfolioIsotope.on("arrangeComplete", function () {
             AOS.refresh();
